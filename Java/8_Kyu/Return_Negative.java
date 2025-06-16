@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+
 public class Return_Negative {
     public static void main(String[] args) {
         System.out.println(makeNegative(-42));
