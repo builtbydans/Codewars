@@ -1,12 +1,9 @@
-import java.util.Arrays;
-
 public class SquareEveryDigit {
     public static void main(String[] args) {
         System.out.println(squareDigits(9119));
     }
 
-    public static int squareDigits(int n) {
-        int result = 0;
+    public static String squareDigits(int n) {
         StringBuilder builder = new StringBuilder();
 
         String num = Integer.toString(n);
@@ -14,11 +11,10 @@ public class SquareEveryDigit {
 
         for (char aChar : chars) {
             int digit = Integer.parseInt(String.valueOf(aChar));
-            int square = digit * digit;
-            builder.append(square);
+            int cubed = digit * digit * digit;
+            builder.append(cubed);
         }
 
-        result = Integer.parseInt(builder.toString());
-        return result;
+        return builder.toString();
     }
 }
