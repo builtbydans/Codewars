@@ -17,21 +17,40 @@ eight(dividedBy(three()));
 
 */
 
-const zero = () => 0;
-const one = () => 1;
-const two = () => 2;
-const three = () => 3;
-const four = () => 4;
-const five = () => 5;
-const six = () => 6;
-const seven = () => 7;
-const eight = () => 8;
-const nine = () => 9;
+const zero = (op) => (!op ? 0 : op(0));
+const one = (op) => (!op ? 1 : op(1));
+const two = (op) => (!op ? 2 : op(2));
+const three = (op) => (!op ? 3 : op(3));
+const four = (op) => (!op ? 4 : op(4));
+const five = (op) => (!op ? 5 : op(5));
+const six = (op) => (!op ? 6 : op(6));
+const seven = (op) => (!op ? 7 : op(7));
+const eight = (op) => (!op ? 8 : op(8));
+const nine = (op) => (!op ? 9 : op(9));
 
-const plus = () => {};
-const minus = () => {};
-const times = () => {};
-const dividedBy = () => {};
+const plus = (right) => {
+  return function (left) {
+    return left + right;
+  };
+};
+
+const minus = (right) => {
+  return function (left) {
+    return left - right;
+  };
+};
+
+const times = (right) => {
+  return function (left) {
+    return left * right;
+  };
+};
+
+const dividedBy = (right) => {
+  return function (left) {
+    return left / right;
+  };
+};
 
 console.log(seven(times(five()))); // 35
 console.log(four(plus(nine()))); // 13
