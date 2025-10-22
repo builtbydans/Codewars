@@ -48,7 +48,7 @@ const times = (right) => {
 
 const dividedBy = (right) => {
   return function (left) {
-    return left / right;
+    return Math.floor(left / right);
   };
 };
 
